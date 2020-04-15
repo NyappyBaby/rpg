@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RPG - Arme - {{ armement.nom|capitalize }}{% endblock %}
+
+
+{% block superTitre %}Arme - {{ armement.nom|capitalize }} {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <img src="{{ asset('assets/images/armes/' ~ armement.nom|capitalize ~ '.png') }}" alt="">
+        </div>
+        <div class="col">
+            <h4>Les informations de {{ armement.nom|capitalize }}</h4>
+            <div>Degats : {{ armement.degats }}</div>
+            <div>Description : {{ armement.desc }}</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

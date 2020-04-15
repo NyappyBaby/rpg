@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RPG - Liste des armes{% endblock %}
+
+{% block superTitre %}Liste des armes{% endblock %}
+
+{% block body %}
+   <div class="container">
+        {% for armement in armes %}
+            <div class="row mb-4">
+                <div class="col-2">
+                    <img src="{{ asset('assets/images/armes' ~ armement.nom|capitalize ~ '.png') }}" alt="">
+                </div>
+                <div class="col">
+                    <h4>Les informations de <a href="{{ path('display_arme', {'nom' : armement.nom}) }}">{{ armement.nom|capitalize }}</a></h4>
+                    <div>Dégats : {{ armement.degats }}</div>
+                    <div>Description : {{ armement.desc}}</div>
+                </div>
+            </div>
+        {% endfor %}
+   </div>
+ 
+{% endblock %}
